@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Crimson Lantern - Web Templates</title>
+	<link rel="icon" type="image/x-icon" href="resources/favicon.png">    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+            min-height: 100vh;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .container {
+            width: 90%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .title {
+            text-align: center;
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        a {
+            text-decoration: none;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 120px;
+            height: 80px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        a:hover, a:focus {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <h1>Examples of web templates related to Travel Agencies</h1>
+    <div class="container">
+        <div class="title">Templates added on: Thursday, April 18, 2024</div>
+        <div class="cards">
+            <script>
+                const totalLinks = 49;
+                for (let i = 1; i <= totalLinks; i++) {
+                    // Skipping yellow range from 40° to 80°
+                    let baseHue = (i * 280 / totalLinks); // Use only 280 degrees
+                    let hue = baseHue < 40 ? baseHue : baseHue + 40;
+                    let saturation = 75; // Reduced saturation for less intense color
+                    let lightness = 40; // Reduced lightness for darker colors
+                    let link = document.createElement('a');
+                    link.href = i.toString().padStart(2, '0') + "/index.html";
+                    link.target = "_blank";
+                    link.textContent = "Template " + i.toString().padStart(2, '0');
+                    link.style.backgroundColor = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+                    document.querySelector('.cards').appendChild(link);
+                }
+            </script>
+        </div>
+    </div>
+</body>
+</html>
