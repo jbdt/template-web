@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Crimson Lantern - Web Templates</title>
-	<link rel="icon" type="image/x-icon" href="resources/favicon.png">    <style>
+    <link rel="icon" type="image/x-icon" href="resources/favicon.png">
+    <style>
         body {
             font-family: Arial, sans-serif;
-            background: #f4f4f9;
+            background: url('resources/bg.png');
+            background-size: 500px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -15,14 +17,15 @@
             min-height: 100vh;
         }
         h1 {
-            color: #333;
+            color: #fff;
             text-align: center;
             font-size: 24px;
             margin-bottom: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
         }
         .container {
             width: 90%;
-            background-color: #fff;
+            background-color: #fff6;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -31,7 +34,7 @@
         .title {
             text-align: center;
             font-size: 18px;
-            color: #555;
+            color: #f5f5f5;
             margin-bottom: 20px;
         }
         .cards {
@@ -67,11 +70,10 @@
             <script>
                 const totalLinks = 49;
                 for (let i = 1; i <= totalLinks; i++) {
-                    // Skipping yellow range from 40° to 80°
-                    let baseHue = (i * 280 / totalLinks); // Use only 280 degrees
+                    let baseHue = (i * 280 / totalLinks);
                     let hue = baseHue < 40 ? baseHue : baseHue + 40;
-                    let saturation = 75; // Reduced saturation for less intense color
-                    let lightness = 40; // Reduced lightness for darker colors
+                    let saturation = 75;
+                    let lightness = 40;
                     let link = document.createElement('a');
                     link.href = i.toString().padStart(2, '0') + "/index.html";
                     link.target = "_blank";
